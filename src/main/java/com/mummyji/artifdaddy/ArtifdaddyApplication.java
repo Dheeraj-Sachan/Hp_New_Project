@@ -17,18 +17,12 @@ public class ArtifdaddyApplication implements CommandLineRunner {
     public static void main(String[] args) {
         SpringApplication.run(ArtifdaddyApplication.class, args);
         System.out.println("I am in main class");
-
-        //  Student s1 = new Student(1, "DHeeraj Sachan", "Army School");
         Student s2 = new Student(2, "Vivek Sachan", "Army School");
-
         Student s3 = new Student(3, "Mummy Sachan", "Army School");
         Student s4 = new Student(4, "Daddy Sachan", "Army School");
-
-
         SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
         Session session = factory.openSession();
-        //session.save(s1);
-        session.save(s2);
+
         session.save(s3);
         session.save(s4);
 
